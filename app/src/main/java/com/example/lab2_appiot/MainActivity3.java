@@ -18,8 +18,13 @@ import org.mozilla.javascript.Scriptable;
 
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity3 extends AppCompatActivity implements View.OnClickListener{
 
+    private ArrayList<String> resultados = new ArrayList<>();
+    /*Esta parte del código fue extraido del siguiente video de Youtube para luego
+    * acoplarlo en el código https://www.youtube.com/watch?v=X3KQdwVlo1Q*/
     TextView resultTv,solutionTv;
     MaterialButton buttonC;
     MaterialButton buttonDivide,buttonMultiply,buttonPlus,buttonMinus,buttonEquals;
@@ -62,9 +67,16 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         String buttonText = button.getText().toString();
         String dataToCalculate = solutionTv.getText().toString();
 
-
         if(buttonText.equals("=")){
+            String result = resultTv.getText().toString();
+            resultados.add(result);
             solutionTv.setText(resultTv.getText());
+
+            Intent intent = new Intent(this, MainActivity4.class);
+
+            intent.putStringArrayListExtra("resultados", resultados);
+
+            startActivity(intent);
             return;
         }
         if(buttonText.equals("C")){

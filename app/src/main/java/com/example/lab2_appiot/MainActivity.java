@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        /*Le pregunte a chat gpt como se podria hacer cambio de color a un texto*/
         final int[] colores = {R.color.color1, R.color.color2, R.color.color3}; // Agrega tantos colores como desees
 
         final int[] colorIndex = {0};
