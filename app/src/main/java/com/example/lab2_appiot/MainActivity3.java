@@ -51,12 +51,10 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         assignId(button9,R.id.button9);
 
     }
-
     void assignId(MaterialButton btn,int id){
         btn = findViewById(id);
         btn.setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View view) {
